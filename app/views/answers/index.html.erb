@@ -1,0 +1,16 @@
+  <tbody>
+    <% Answer.all.each do |answer| %>
+
+        <p><a href="/answer/<%= answer.id %>" target="_blank" %><%= answer.an_answer %></a></td>
+
+        <%= link_to "Edit", edit_answer_answer_path(answer.answerable_id,answer), :class => "btn btn-warning btn-xs" %>
+
+        <% if current_user %>
+          <%= link_to "Answer", new_answer_answer_path(answer), :class => "btn btn-warning btn-xs" %>
+        <% end %>
+
+        Created at: <%= answer.created_at.strftime("%b %e, %l:%M %p")%> </p>
+
+    <% end %>
+  </tbody>
+</table>

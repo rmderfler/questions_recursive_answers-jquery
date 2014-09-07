@@ -1,0 +1,9 @@
+<li class="answer" id="answer_<%= answer.id %>">
+  <div class="body">
+    <%= answer.an_answer %>
+    <%= link_to '(Reply)', new_answer_answer_path(answer), class: "new_reply", id: "new_new_reply", remote: true %>
+  </div>
+  <ul class="answer_list">
+      <%= render :partial => 'answers/answer', class: "recursive_replies", remote: true, :collection => answer.answers %>
+  </ul>
+</li>

@@ -1,0 +1,5 @@
+$('#answer_<%= @answerable.id %>').children('.body').children('.new_answer').remove();
+
+$('#answer_<%= @answerable.id %>').children('.answer_list').append('<%= j render @answer %>');
+
+$('#answer_<%= @answerable.id %>').children('.body').children('.new_reply').show()
