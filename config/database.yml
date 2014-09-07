@@ -5,3 +5,8 @@ development:
 test:
   adapter: postgresql
   database: stack_test
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: stack_production
