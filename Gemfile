@@ -13,6 +13,10 @@ gem 'simple_form'
 gem 'bcrypt'
 gem 'textacular', '~> 3.0'
 
+group :production do
+  gem 'rails_12factor'
+end
+
 
 group :development do
   gem 'better_errors'
