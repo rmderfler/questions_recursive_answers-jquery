@@ -41,10 +41,10 @@
 <br>
 
 <div class= "answer-list col-md-8">
-  <% @answers.each do |answer| %>
+  <% @answers.where("answerable_type = ?", "Question").each do |answer| %>
 
       <p><a href="/answers/<%= answer.id %>" target="_blank", name = "answer/<%= answer.id %>" %><%= answer.an_answer %></a>
-        <p><% question_id = answer.answerable_id %>
+        <p><% question_id = answer.answerable_id %>question:
             <%= Question.find(question_id).a_question %></p>
 
 

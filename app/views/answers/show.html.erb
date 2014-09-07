@@ -3,7 +3,7 @@
 <p>ANSWER: <%= @answer.an_answer %></p>
 
 <p>
-  <%= form_for [@answerable, Answer.new] do |f| %>
+  <%= form_for [@question, @answerable, Answer.new] do |f| %>
     <p>
       <%= f.text_area :an_answer %>
     </p>

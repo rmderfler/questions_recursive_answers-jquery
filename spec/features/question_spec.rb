@@ -50,17 +50,17 @@ describe "Questions" do
       expect(page).to have_content "test question2"
   end
 
-  it "allows the creator of the question to delete question" do
-    visit '/users/login'
-    user = User.create(:name => 'Joe', :password => 'password')
-    fill_in 'Name', :with => 'Joe'
-    fill_in 'Password', :with => 'password'
-    click_button 'Log in'
-    question = user.questions.create(a_question: 'test question')
-    visit "/questions/#{question.id}"
-    click_link "Delete"
-    visit "/questions/"
-    expect(page).to_not have_content "test question"
-  end
+    it "allows the creator of the question to delete question" do
+      visit '/users/login'
+      user = User.create(:name => 'Joe', :password => 'password')
+      fill_in 'Name', :with => 'Joe'
+      fill_in 'Password', :with => 'password'
+      click_button 'Log in'
+      question = user.questions.create(a_question: 'test question')
+      visit "/questions/#{question.id}"
+      click_link "Delete"
+      visit "/questions/"
+      expect(page).to_not have_content "test question"
+    end
 
 end

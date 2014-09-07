@@ -11,10 +11,8 @@ class AnswersController < ApplicationController
 
   def show
     @answer = Answer.find(params[:id])
-    @question = Question.find(params[:id])
-    @answerable = @question
-    @answers = @answerable.answers
-
+    @question = Question.where(params[:id] == @answer.answerable_id).each {|q| q.a_question}.pop
+    @answers = Answer.where(params[:answerable_id] == @answer.id)
   end
 
   def create
